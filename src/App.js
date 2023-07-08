@@ -79,7 +79,7 @@ export default function App() {
           setIsLoading(true);
           setError("");
           const res = await fetch(
-            `http://www.omdbapi.com/?i=tt3896198&apikey=${key}&s=${query}`,
+            `https://www.omdbapi.com/?i=tt3896198&apikey=${key}&s=${query}`,
             { signal: controller.signal }
           );
           if (!res.ok) {
@@ -247,7 +247,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       async function getMovieById() {
         setIsLoading(true);
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${key}&i=${selectedId}`
+          `https://www.omdbapi.com/?apikey=${key}&i=${selectedId}`
         );
         const data = await res.json();
         //  console.log(data);
